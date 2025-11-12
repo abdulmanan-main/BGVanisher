@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGVanisher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BGVanisher</h1>
+            <p class="tagline">Remove image backgrounds instantly with AI</p>
+        </header>
+
+        <div class="main-card">
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <span class="upload-icon">📁</span>
+                        <h3>Drag & Drop Image</h3>
+                        <p>or click to browse files</p>
+                        <small>Supports JPG, PNG, WEBP (Max 5MB)</small>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" hidden>
+                </div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <div class="preview-container">
+                    <div class="image-box">
+                        <h4>Original Image</h4>
+                        <div class="image-wrapper">
+                            <img id="originalImage" alt="Original">
+                        </div>
+                        <div class="image-info" id="originalInfo"></div>
+                    </div>
+                    
+                    <div class="image-box">
+                        <h4>Background Removed</h4>
+                        <div class="image-wrapper">
+                            <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                                <div class="spinner"></div>
+                                <p>Removing background...</p>
+                            </div>
+                            <img id="processedImage" alt="Processed" style="display: none;">
+                            <div class="placeholder" id="processedPlaceholder">
+                                <span>👆</span>
+                                <p>Click process to remove background</p>
+                            </div>
+                        </div>
+                        <div class="image-info" id="processedInfo"></div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="controls">
+                    <button class="btn btn-secondary" id="cancelBtn">
+                        <span>🗑️</span> Cancel
+                    </button>
+                    <button class="btn btn-primary" id="processBtn">
+                        <span>✨</span> Remove Background
+                    </button>
+                    <button class="btn btn-success" id="downloadBtn" disabled>
+                        <span>💾</span> Download Image
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="success-message">
+                    <h3>✅ Background Removed Successfully!</h3>
+                    <p>Your image is ready to download</p>
+                </div>
+            </div>
+
+            <!-- Instructions -->
+            <div class="instructions">
+                <h3>💡 How to Use:</h3>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <span class="step-text">Upload or drag & drop your image</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <span class="step-text">Click "Remove Background"</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <span class="step-text">Download your processed image</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by Abdul Manan | Made with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
